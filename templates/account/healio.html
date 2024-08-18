@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" href="{% static 'assets/images/logo.ico' %}" type="image/x-icon"/>
+    <title>Healio</title>
+
+    <!-- ========== All CSS files linkup ========= -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'assets/css/lineicons.css' %}"/>
+    <link rel="stylesheet" href="{% static 'assets/css/materialdesignicons.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'assets/css/fullcalendar.css' %}"/>
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}"/>
+</head>
+<body>
+<!-- ======== Preloader =========== -->
+<div id="preloader">
+    <div class="spinner"></div>
+</div>
+<!-- ======== Preloader =========== -->
+
+<!-- ======== sidebar-nav start =========== -->
+<aside class="sidebar-nav-wrapper">
+    <div class="container my-2 d-flex justify-content-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+             class="bi bi-heart-pulse" viewBox="0 0 16 16">
+            <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053.918 3.995.78 5.323 1.508 7H.43c-2.128-5.697 4.165-8.83 7.394-5.857q.09.083.176.171a3 3 0 0 1 .176-.17c3.23-2.974 9.522.159 7.394 5.856h-1.078c.728-1.677.59-3.005.108-3.947C13.486.878 10.4.28 8.717 2.01zM2.212 10h1.315C4.593 11.183 6.05 12.458 8 13.795c1.949-1.337 3.407-2.612 4.473-3.795h1.315c-1.265 1.566-3.14 3.25-5.788 5-2.648-1.75-4.523-3.434-5.788-5"></path>
+            <path d="M10.464 3.314a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8H.5a.5.5 0 0 0 0 1H4a.5.5 0 0 0 .416-.223l1.473-2.209 1.647 4.118a.5.5 0 0 0 .945-.049l1.598-5.593 1.457 3.642A.5.5 0 0 0 12 9h3.5a.5.5 0 0 0 0-1h-3.162z"></path>
+        </svg>
+    </div>
+    <nav class="sidebar-nav">
+        <ul>
+            <span class="divider"><hr/></span>
+            <li class="nav-item">
+                <a href="/accounts/dashboard">
+              <span class="icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                          d="M8.74999 18.3333C12.2376 18.3333 15.1364 15.8128 15.7244 12.4941C15.8448 11.8143 15.2737 11.25 14.5833 11.25H9.99999C9.30966 11.25 8.74999 10.6903 8.74999 10V5.41666C8.74999 4.7263 8.18563 4.15512 7.50586 4.27556C4.18711 4.86357 1.66666 7.76243 1.66666 11.25C1.66666 15.162 4.83797 18.3333 8.74999 18.3333Z"></path>
+                  <path
+                          d="M17.0833 10C17.7737 10 18.3432 9.43708 18.2408 8.75433C17.7005 5.14918 14.8508 2.29947 11.2457 1.75912C10.5629 1.6568 10 2.2263 10 2.91665V9.16666C10 9.62691 10.3731 10 10.8333 10H17.0833Z"></path>
+                </svg>
+              </span>
+                    <span class="text">Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/accounts/profile">
+              <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="2 2 13 13" fill="none">
+  <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"></path>
+</svg>
+              </span>
+                    <span class="text">Profile</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/accounts/notifications/">
+              <span class="icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                          d="M10.8333 2.50008C10.8333 2.03984 10.4602 1.66675 9.99999 1.66675C9.53975 1.66675 9.16666 2.03984 9.16666 2.50008C9.16666 2.96032 9.53975 3.33341 9.99999 3.33341C10.4602 3.33341 10.8333 2.96032 10.8333 2.50008Z"></path>
+                  <path
+                          d="M17.5 5.41673C17.5 7.02756 16.1942 8.33339 14.5833 8.33339C12.9725 8.33339 11.6667 7.02756 11.6667 5.41673C11.6667 3.80589 12.9725 2.50006 14.5833 2.50006C16.1942 2.50006 17.5 3.80589 17.5 5.41673Z"></path>
+                  <path
+                          d="M11.4272 2.69637C10.9734 2.56848 10.4947 2.50006 10 2.50006C7.10054 2.50006 4.75003 4.85057 4.75003 7.75006V9.20873C4.75003 9.72814 4.62082 10.2393 4.37404 10.6963L3.36705 12.5611C2.89938 13.4272 3.26806 14.5081 4.16749 14.9078C7.88074 16.5581 12.1193 16.5581 15.8326 14.9078C16.732 14.5081 17.1007 13.4272 16.633 12.5611L15.626 10.6963C15.43 10.3333 15.3081 9.93606 15.2663 9.52773C15.0441 9.56431 14.8159 9.58339 14.5833 9.58339C12.2822 9.58339 10.4167 7.71791 10.4167 5.41673C10.4167 4.37705 10.7975 3.42631 11.4272 2.69637Z"></path>
+                  <path
+                          d="M7.48901 17.1925C8.10004 17.8918 8.99841 18.3335 10 18.3335C11.0016 18.3335 11.9 17.8918 12.511 17.1925C10.8482 17.4634 9.15183 17.4634 7.48901 17.1925Z"></path>
+                </svg>
+              </span>
+                    <span class="text">Notifications</span>
+                </a>
+            </li>
+            <span class="divider"><hr/></span>
+            <li class="nav-item nav-item-has-children active">
+                <a
+                        href="#"
+                        class="collapsed"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#ddmenu_1"
+                        aria-controls="ddmenu_1"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                >
+              <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     class="bi bi-clipboard2-pulse" viewBox="0 0 16 16">
+  <path d="M9.5 0a.5.5 0 0 1 .5.5.5.5 0 0 0 .5.5.5.5 0 0 1 .5.5V2a.5.5 0 0 1-.5.5h-5A.5.5 0 0 1 5 2v-.5a.5.5 0 0 1 .5-.5.5.5 0 0 0 .5-.5.5.5 0 0 1 .5-.5z"></path>
+  <path d="M3 2.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 0 0-1h-.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1H12a.5.5 0 0 0 0 1h.5a.5.5 0 0 1 .5.5v12a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5z"></path>
+  <path d="M9.979 5.356a.5.5 0 0 0-.968.04L7.92 10.49l-.94-3.135a.5.5 0 0 0-.926-.08L4.69 10H4.5a.5.5 0 0 0 0 1H5a.5.5 0 0 0 .447-.276l.936-1.873 1.138 3.793a.5.5 0 0 0 .968-.04L9.58 7.51l.94 3.135A.5.5 0 0 0 11 11h.5a.5.5 0 0 0 0-1h-.128z"></path>
+</svg>
+              </span>
+                    <span class="text">HealthCare Support</span>
+                </a>
+                <ul id="ddmenu_1" class="collapse dropdown-nav">
+                    <li>
+                        <a href="/accounts/chatbot/">Healio - Chatbot</a>
+                    </li>
+                    <li>
+                        <a href="/accounts/teleconsult/">Teleconsult</a>
+                    </li>
+                </ul>
+            </li>
+            <span class="divider"><hr/></span>
+            <li class="nav-item nav-item-has-children">
+                <a
+                        href="#"
+                        class="collapsed"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#ddmenu_3"
+                        aria-controls="ddmenu_3"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                >
+              <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-fire"
+                     viewBox="0 0 16 16">
+  <path d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16m0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15"></path>
+</svg>
+              </span>
+                    <span class="text">Exercise With Us</span>
+                </a>
+                <ul id="ddmenu_3" class="collapse dropdown-nav">
+                    <li>
+                        <a href="/accounts/yoga/">Yoga</a>
+                    </li>
+                </ul>
+            </li>
+            <span class="divider"><hr/></span>
+            <li class="nav-item nav-item-has-children">
+                <a
+                        href="#"
+                        class="collapsed"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#ddmenu_4"
+                        aria-controls="ddmenu_4"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                >
+              <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     class="bi bi-graph-up-arrow" viewBox="0 0 16 16">
+  <path fill-rule="evenodd"
+        d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5"></path>
+</svg>
+              </span>
+                    <span class="text">Metrics</span>
+                </a>
+                <ul id="ddmenu_4" class="collapse dropdown-nav">
+                    <li>
+                        <a href="/accounts/physical/">Physical Activities</a>
+                    </li>
+                    <li>
+                        <a href="/accounts/nutrition/">Nutritional Intake</a>
+                    </li>
+                    <li>
+                        <a href="/accounts/sleep/">Sleep</a>
+                    </li>
+                </ul>
+            </li>
+            <span class="divider"><hr/></span>
+        </ul>
+    </nav>
+</aside>
+<div class="overlay"></div>
+<!-- ======== sidebar-nav end =========== -->
+
+<!-- ======== main-wrapper start =========== -->
+<main class="main-wrapper">
+    <!-- ========== header start ========== -->
+    <header class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-5 col-md-5 col-6">
+                    <div class="header-left d-flex align-items-center">
+                        <div class="menu-toggle-btn">
+                            <button id="menu-toggle" class="main-btn light-btn btn-hover">
+                                <i class="lni lni-chevron-left"></i>
+                            </button>
+                        </div>
+                        &nbsp; &nbsp;
+                        <div class="navbar-logo">
+                            <a href="#">
+                                <img src="{% static 'assets/images/logo/logo.png' %}" class="img" height="40vh"
+                                     alt="Logo"/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-7 col-6">
+                    <div class="header-right">
+                        <!-- notification start -->
+                        <div class="notification-box ml-15 d-none d-md-flex">
+                            <button class="dropdown-toggle" type="button" id="notification" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                            d="M11 20.1667C9.88317 20.1667 8.88718 19.63 8.23901 18.7917H13.761C13.113 19.63 12.1169 20.1667 11 20.1667Z"
+                                            fill=""></path>
+                                    <path
+                                            d="M10.1157 2.74999C10.1157 2.24374 10.5117 1.83333 11 1.83333C11.4883 1.83333 11.8842 2.24374 11.8842 2.74999V2.82604C14.3932 3.26245 16.3051 5.52474 16.3051 8.24999V14.287C16.3051 14.5301 16.3982 14.7633 16.564 14.9352L18.2029 16.6342C18.4814 16.9229 18.2842 17.4167 17.8903 17.4167H4.10961C3.71574 17.4167 3.5185 16.9229 3.797 16.6342L5.43589 14.9352C5.6017 14.7633 5.69485 14.5301 5.69485 14.287V8.24999C5.69485 5.52474 7.60672 3.26245 10.1157 2.82604V2.74999Z"
+                                            fill=""></path>
+                                </svg>
+                                <span></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notification">
+                                <li>
+                                    <a href="#0">
+                                        <div class="image">
+                                            <img src="{% static 'assets/images/lead/lead-6.png' %}" alt=""/>
+                                        </div>
+                                        <div class="content">
+                                            <h6>
+                                                John Doe
+                                                <span class="text-regular">
+                              comment on a product.
+                            </span>
+                                            </h6>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consect etur adipiscing
+                                                elit Vivamus tortor.
+                                            </p>
+                                            <span>10 mins ago</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#0">
+                                        <div class="image">
+                                            <img src="{% static 'assets/images/lead/lead-1.png' %}" alt=""/>
+                                        </div>
+                                        <div class="content">
+                                            <h6>
+                                                Jonathon
+                                                <span class="text-regular">
+                              like on a product.
+                            </span>
+                                            </h6>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consect etur adipiscing
+                                                elit Vivamus tortor.
+                                            </p>
+                                            <span>10 mins ago</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- notification end -->
+                        <!-- message start -->
+                        <div class="header-message-box ml-15 d-none d-md-flex">
+                            <button class="dropdown-toggle" type="button" id="message" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                            d="M7.74866 5.97421C7.91444 5.96367 8.08162 5.95833 8.25005 5.95833C12.5532 5.95833 16.0417 9.4468 16.0417 13.75C16.0417 13.9184 16.0364 14.0856 16.0259 14.2514C16.3246 14.138 16.6127 14.003 16.8883 13.8482L19.2306 14.629C19.7858 14.8141 20.3141 14.2858 20.129 13.7306L19.3482 11.3882C19.8694 10.4604 20.1667 9.38996 20.1667 8.25C20.1667 4.70617 17.2939 1.83333 13.75 1.83333C11.0077 1.83333 8.66702 3.55376 7.74866 5.97421Z"
+                                            fill=""></path>
+                                    <path
+                                            d="M14.6667 13.75C14.6667 17.2938 11.7939 20.1667 8.25004 20.1667C7.11011 20.1667 6.03962 19.8694 5.11182 19.3482L2.76946 20.129C2.21421 20.3141 1.68597 19.7858 1.87105 19.2306L2.65184 16.8882C2.13062 15.9604 1.83338 14.89 1.83338 13.75C1.83338 10.2062 4.70622 7.33333 8.25004 7.33333C11.7939 7.33333 14.6667 10.2062 14.6667 13.75ZM5.95838 13.75C5.95838 13.2437 5.54797 12.8333 5.04171 12.8333C4.53545 12.8333 4.12504 13.2437 4.12504 13.75C4.12504 14.2563 4.53545 14.6667 5.04171 14.6667C5.54797 14.6667 5.95838 14.2563 5.95838 13.75ZM9.16671 13.75C9.16671 13.2437 8.7563 12.8333 8.25004 12.8333C7.74379 12.8333 7.33338 13.2437 7.33338 13.75C7.33338 14.2563 7.74379 14.6667 8.25004 14.6667C8.7563 14.6667 9.16671 14.2563 9.16671 13.75ZM11.4584 14.6667C11.9647 14.6667 12.375 14.2563 12.375 13.75C12.375 13.2437 11.9647 12.8333 11.4584 12.8333C10.9521 12.8333 10.5417 13.2437 10.5417 13.75C10.5417 14.2563 10.9521 14.6667 11.4584 14.6667Z"
+                                            fill=""></path>
+                                </svg>
+                                <span></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="message">
+                                <li>
+                                    <a href="#0">
+                                        <div class="image">
+                                            <img src="{% static 'assets/images/lead/lead-5.png' %}" alt=""/>
+                                        </div>
+                                        <div class="content">
+                                            <h6>Jacob Jones</h6>
+                                            <p>Hey!I can across your profile and ...</p>
+                                            <span>10 mins ago</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#0">
+                                        <div class="image">
+                                            <img src="{% static 'assets/images/lead/lead-3.png' %}" alt=""/>
+                                        </div>
+                                        <div class="content">
+                                            <h6>John Doe</h6>
+                                            <p>Would you mind please checking out</p>
+                                            <span>12 mins ago</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#0">
+                                        <div class="image">
+                                            <img src="{% static 'assets/images/lead/lead-2.png' %}" alt=""/>
+                                        </div>
+                                        <div class="content">
+                                            <h6>Anee Lee</h6>
+                                            <p>Hey! are you available for freelance?</p>
+                                            <span>1h ago</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- message end -->
+                        <!-- profile start -->
+                        <div class="profile-box ml-15">
+                            <button class="dropdown-toggle bg-transparent border-0" type="button" id="profile"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                <div class="profile-info">
+                                    <div class="info">
+                                        <div class="image">
+                                            <img src="
+                                                    {% if user.profile.avatar %}
+                                                        {{ user.profile.avatar.url }}
+                                                    {% else %}
+                                                        /media/avatars/default_avatar.png
+                                                    {% endif %}
+                                                    "
+                                                 alt="Avatar"/>
+                                        </div>
+                                        <div class="d-none d-md-block">
+                                            <h6 class="fw-500">{{ user.first_name }} {{ user.last_name }}</h6>
+                                            <p>{{ user.username }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile">
+                                <li>
+                                    <div class="author-info flex items-center !p-1">
+                                        <div class="image">
+                                            <img src="
+                                                    {% if user.profile.avatar %}
+                                                        {{ user.profile.avatar.url }}
+                                                    {% else %}
+                                                        /media/avatars/default_avatar.png
+                                                    {% endif %}
+                                                    "
+                                                 alt="Avatar"/>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="text-sm">{{ user.first_name }} {{ user.last_name }}</h4>
+                                            <a class="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white text-xs"
+                                               href="#">{{ user.email }}</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="/accounts/profile">
+                                        <i class="lni lni-user"></i> View Profile
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/accounts/notifications/">
+                                        <i class="lni lni-alarm"></i> Notifications
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/accounts/messages/"> <i class="lni lni-popup"></i> Messages </a>
+                                </li>
+                                <li>
+                                    <a href="/accounts/settings/"> <i class="lni lni-cog"></i> Settings </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="/accounts/logout"> <i class="lni lni-exit"></i> Sign Out </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- profile end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ========== header end ========== -->
+
+    <!-- ========== section start ========== -->
+    <section class="section">
+        <div class="container-fluid">
+            <!-- ========== title-wrapper start ========== -->
+            <div class="title-wrapper pt-30">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="title">
+                            <h2>Healio - Chatbot</h2>
+                        </div>
+                    </div>
+                    <!-- end col -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- ========== title-wrapper end ========== -->
+
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="card-style settings-card-1 mb-30">
+                        <div class="title mb-30">
+                            <h6>Have a Question?</h6>
+                        </div>
+                        <form id="id_form_question" method="post" enctype="multipart/form-data">{% csrf_token %}
+                            <div class="row">
+                                <div class="col-1 justify-content-center">
+                                    <input id="id_image" name="image" type="file" accept=".jpg,.gif,.png"
+                                           onchange="document.getElementById('id_form_question').submit()" hidden/>
+                                    <label for="id_image"><i class="mdi mdi-camera"
+                                                             style="font-size: 28px; padding-top: 15px"></i></label>
+                                </div>
+                                <div class="col-11">
+                                    <div class="input-style-1">
+                                        <label for="id_prompt"></label>
+                                        <input id="id_prompt" name="prompt" type="text"
+                                               placeholder="Ask Your Questions Here" value="{{ question }}"
+                                               required/>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- end card -->
+                </div>
+                <!-- end col -->
+
+                <div class="col-lg-7">
+                    <div class="card-style settings-card-2 mb-30">
+                        <div class="title mb-30">
+                            <h6>You Asked? We Answered!</h6>
+                        </div>
+                        <div class="col">
+                            <div class="input-style-1">
+                                <label for="id_response"></label>
+                                <textarea id="id_response" name="response"
+                                          placeholder="Response" rows="{{ rows }}" disabled>{{ response }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end card -->
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+    <!-- ========== section end ========== -->
+
+    <!-- ========== footer start =========== -->
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="container d-md-flex py-4">
+                    <div class="me-md-auto text-center text-md-start">
+                        <div class="copyright">
+                            &copy; Copyright <strong><span>health.ai</span></strong>. All Rights Reserved
+                        </div>
+                    </div>
+                    <!-- end col-->
+                    <div class="col-md-6">
+                        <div class="terms d-flex justify-content-center justify-content-md-end">
+                            <a href="#0" class="text-sm">Term & Conditions</a>
+                            <a href="#0" class="text-sm ml-15">Privacy & Policy</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+            </div>
+        </div>
+        <!-- end container -->
+    </footer>
+    <!-- ========== footer end =========== -->
+</main>
+<!-- ======== main-wrapper end =========== -->
+
+<!-- ========= All Javascript files linkup ======== -->
+<script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/js/Chart.min.js' %}"></script>
+<script src="{% static 'assets/js/dynamic-pie-chart.js' %}"></script>
+<script src="{% static 'assets/js/moment.min.js' %}"></script>
+<script src="{% static 'assets/js/fullcalendar.js' %}"></script>
+<script src="{% static 'assets/js/jvectormap.min.js' %}"></script>
+<script src="{% static 'assets/js/world-merc.js' %}"></script>
+<script src="{% static 'assets/js/polyfill.js' %}"></script>
+<script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+</html>

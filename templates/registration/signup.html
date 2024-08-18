@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" href="{% static 'assets/images/logo.ico' %}" type="image/x-icon"/>
+    <title>Sign Up - health.ai</title>
+
+    <!-- ========== All CSS files linkup ========= -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'assets/css/lineicons.css' %}"/>
+    <link rel="stylesheet" href="{% static 'assets/css/materialdesignicons.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'assets/css/fullcalendar.css' %}"/>
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}"/>
+</head>
+<body>
+<!-- ======== Preloader =========== -->
+<div id="preloader">
+    <div class="spinner"></div>
+</div>
+<!-- ======== Preloader =========== -->
+
+<!-- ======== main-wrapper start =========== -->
+<main>
+    <!-- ========== header start ========== -->
+    <header class="header">
+        <div class="container-fluid">
+            <div class="col-lg-5 col-md-5 col-6">
+                    <span>&nbsp; &nbsp;
+                        <a href="/">
+                        <img src="{% static 'assets/images/logo/logo.png' %}" class="img" height="45vh" alt="Logo">
+                        </a>
+                    </span>
+            </div>
+        </div>
+    </header>
+    <!-- ========== header end ========== -->
+
+    <!-- ========== tab components start ========== -->
+    <section class="tab-components">
+        <div class="container-fluid">
+            <!-- ========== form-elements-wrapper start ========== -->
+            <div class="form-elements-wrapper">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <br>
+                        <!-- input style start -->
+                        <div class="card-style mb-30">
+                            <div class="card-header">
+                                <div class="title-wrapper pt-30">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-6">
+                                            <div class="title">
+                                                <h3>Sign Up for an Account</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end row -->
+                                </div>
+                            </div>
+                            <form method="post">{% csrf_token %}
+                                <div class="input-style-2">
+                                    <label for="id_username">Username</label>
+                                    {% if username_error %}
+                                        <div class="d-flex gap-2 justify-content-between">
+                                            <div class="alert">
+                                                {% for error in username_error %}
+                                                    <p class="text-medium" style="color: #D50100">{{ error }}</p>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                    <input type="text" placeholder="Username" id="id_username" name="username" required
+                                            {% if form.username.value %}
+                                           value="{{ form.username.value }}" {% endif %}/>
+                                    <span class="icon"> <i class="lni lni-user"></i> </span>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="input-style-2">
+                                            <label for="id_first_name">First Name</label>
+                                            {% if first_name_error %}
+                                                <div class="d-flex gap-2 justify-content-between">
+                                                    <div class="alert">
+                                                        {% for error in first_name_error %}
+                                                            <p class="text-medium"
+                                                               style="color: #D50100">{{ error }}</p>
+                                                        {% endfor %}
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                            <input type="text" placeholder="First Name" id="id_first_name" required
+                                                   name="first_name"
+                                                    {% if form.first_name.value %}
+                                                   value="{{ form.first_name.value }}" {% endif %}/>
+                                            <span class="icon"> <i class="lni lni-crown"></i> </span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input-style-2">
+                                            <label for="id_last_name">Last Name</label>
+                                            {% if last_name_error %}
+                                                <div class="d-flex gap-2 justify-content-between">
+                                                    <div class="alert">
+                                                        {% for error in last_name_error %}
+                                                            <p class="text-medium"
+                                                               style="color: #D50100">{{ error }}</p>
+                                                        {% endfor %}
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                            <input type="text" placeholder="Last Name" id="id_last_name" required
+                                                   name="last_name" {% if form.last_name.value %}
+                                                   value="{{ form.last_name.value }}" {% endif %}/>
+                                            <span class="icon"> <i class="lni lni-crown"></i> </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="input-style-2">
+                                    <label for="id_email">Email</label>
+                                    {% if email_error %}
+                                        <div class="d-flex gap-2 justify-content-between">
+                                            <div class="alert">
+                                                {% for error in email_error %}
+                                                    <p class="text-medium"
+                                                       style="color: #D50100">{{ error }}</p>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                    <input type="email" placeholder="Email" id="id_email" name="email" required
+                                            {% if form.email.value %}
+                                           value="{{ form.email.value }}" {% endif %}/>
+                                    <span class="icon"> <i class="lni lni-envelope"></i> </span>
+                                </div>
+                                <div class="input-style-2">
+                                    <label for="id_password1">Password</label>
+                                    {% if password1_error %}
+                                        <div class="d-flex gap-2 justify-content-between">
+                                            <div class="alert">
+                                                {% for error in password1_error %}
+                                                    <p class="text-medium"
+                                                       style="color: #D50100">{{ error }}</p>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                    <input type="password" placeholder="Password" id="id_password1" name="password1"
+                                           required/>
+                                    <span class="icon"> <i class="lni lni-key"></i> </span>
+                                </div>
+                                <div class="input-style-2">
+                                    <label for="id_password2">Confirm Password</label>
+                                    {% if password2_error %}
+                                        <div class="d-flex gap-2 justify-content-between">
+                                            <div class="alert">
+                                                {% for error in password2_error %}
+                                                    <p class="text-medium"
+                                                       style="color: #D50100">{{ error }}</p>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                    <input type="password" placeholder="Confirm Password" id="id_password2"
+                                           name="password2" required/>
+                                    <span class="icon"> <i class="lni lni-key"></i> </span>
+                                </div>
+                                <div class="col-12">
+                                    <div class="d-grid my-3">
+                                        <input class="main-btn light-btn btn-hover" type="submit" value="Sign Up">
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="singup-option pt-40">
+                                <p class="text-sm text-medium text-center text-gray">
+                                    Easy Sign Up With
+                                </p>
+                                <div class="button-group pt-40 pb-40 d-flex justify-content-center flex-wrap">
+                                    <button class="main-btn primary-btn-outline m-2">
+                                        <i class="lni lni-facebook-fill mr-10"></i>
+                                        Facebook
+                                    </button>
+                                    <button class="main-btn danger-btn-outline m-2">
+                                        <i class="lni lni-google mr-10"></i>
+                                        Google
+                                    </button>
+                                </div>
+                                <p class="text-sm text-medium text-dark text-center">
+                                    Already have an account? <a href="/accounts/login">Sign In</a>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- end card -->
+                    </div>
+                    <!-- end col -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- ========== form-elements-wrapper end ========== -->
+        </div>
+        <!-- end container -->
+    </section>
+    <!-- ========== tab components end ========== -->
+
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="container d-md-flex py-4">
+                    <div class="me-md-auto text-center text-md-start">
+                        <div class="copyright">
+                            &copy; Copyright <strong><span>health.ai</span></strong>. All Rights Reserved
+                        </div>
+                    </div>
+                    <!-- end col-->
+                    <div class="col-md-6">
+                        <div class="terms d-flex justify-content-center justify-content-md-end">
+                            <a href="#0" class="text-sm">Term & Conditions</a>
+                            <a href="#0" class="text-sm ml-15">Privacy & Policy</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+            </div>
+        </div>
+        <!-- end container -->
+    </footer>
+    <!-- End Footer -->
+</main>
+<!-- ======== main-wrapper end =========== -->
+
+<!-- ========= All Javascript files linkup ======== -->
+<script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/js/Chart.min.js' %}"></script>
+<script src="{% static 'assets/js/dynamic-pie-chart.js' %}"></script>
+<script src="{% static 'assets/js/moment.min.js' %}"></script>
+<script src="{% static 'assets/js/fullcalendar.js' %}"></script>
+<script src="{% static 'assets/js/jvectormap.min.js' %}"></script>
+<script src="{% static 'assets/js/world-merc.js' %}"></script>
+<script src="{% static 'assets/js/polyfill.js' %}"></script>
+<script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+</html>

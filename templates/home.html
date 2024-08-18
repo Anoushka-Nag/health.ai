@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>health.ai</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="{% static 'assets/images/logo.ico' %}" rel="icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'assets/css/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/remixicon.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/swiper-bundle.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/css/materialdesignicons.min.css' %}"/>
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'assets/css/home_style.css' %}" rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: FlexStart
+    * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
+    * Updated: Mar 17 2024 with Bootstrap v5.3.3
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+        <div class="navbar-logo">
+            <a href="#">
+                <img src="{% static 'assets/images/logo/logo.png' %}" class="img" height="50vh"
+                     alt="Logo"/>
+            </a>
+        </div>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                <li><a class="nav-link scrollto" href="#about">About Us</a></li>
+            <li><a class="nav-link scrollto" href="#values">Values</a></li>
+            <li><a class="nav-link scrollto" href="#features">Features</a></li>
+                <li><a class="nav-link scrollto" href="#team">Team</a></li>
+                <li><a class="nav-link scrollto" href="#recent-blog-posts">Blog</a></li>
+                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                <li><a class="getstarted scrollto" href="/accounts/login/">{% if user.is_authenticated %}
+                    Dashboard{% else %}Login{% endif %}</a></li>
+            </ul>
+            <i class="mdi mdi-menu mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="hero d-flex align-items-center">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 d-flex flex-column justify-content-center">
+                <h1 data-aos="fade-up">It's time for smarter health decisions</h1>
+                <h2 data-aos="fade-up" data-aos-delay="400">Join the future of proactive healthcare with health.ai</h2>
+                <div data-aos="fade-up" data-aos-delay="600">
+                    <div class="text-center text-lg-start">
+                        <a href="/accounts/signup/"
+                           class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                            <span>Sign Up</span>
+                            <i class="mdi mdi-arrow-right" style="padding: 8px"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                <img src="{% static 'assets/images/home_page/home.jpg' %}" class="img-fluid" alt="">
+            </div>
+        </div>
+    </div>
+
+</section><!-- End Hero -->
+
+<main id="main">
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+
+        <div class="container" data-aos="fade-up">
+            <div class="row gx-0 justify-content-center">
+
+                <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="content">
+                        <h3>Who We Are</h3>
+                        <h2>health.ai: Your personalized health companion, empowering you with data, tracking, and
+                            AI-powered insights.</h2>
+                        <p>
+                            health.ai is your one-stop shop for taking charge of your health. We're a personal health
+                            tracking platform that puts the power of information in your hands. Whether you're a fitness
+                            enthusiast or simply looking to improve your well-being, health.ai tracks your sleep,
+                            activity, and even stores information about past prescriptions. Our friendly AI-powered
+                            medical chatbot is always there to answer your questions and provide guidance. With
+                            health.ai, you'll gain valuable insights and personalized recommendations to reach your
+                            health goals.
+                        </p>
+                        <div class="text-center text-lg-start">
+                            <a href="#"
+                               class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
+                                <span>Read More</span>
+                                <i class="mdi mdi-arrow-right" style="padding: 8px"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section><!-- End About Section -->
+
+    <!-- ======= Values Section ======= -->
+    <section id="values" class="values">
+
+        <div class="container" data-aos="fade-up">
+
+            <header class="section-header">
+                <h2>Our Values</h2>
+                <p>Your Health, Your Way</p>
+            </header>
+
+            <div class="row">
+
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="box">
+                        <img src="{% static 'assets/images/home_page/empowerment.png' %}" class="img-fluid" alt="" width="256px">
+                        <h3>Empowerment</h3>
+                        <p>We believe everyone deserves access to the tools and knowledge to manage their health</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
+                    <div class="box">
+                        <img src="{% static 'assets/images/home_page/pnc.png' %}" class="img-fluid" alt="" width="256px">
+                        <h3>Privacy & Security</h3>
+                        <p>Your health information is your most valuable asset, and we safeguard it with the utmost
+                            care</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
+                    <div class="box">
+                        <img src="{% static 'assets/images/home_page/innovation.png' %}" class="img-fluid" alt="" width="256px">
+                        <h3>Continuous Innovation</h3>
+                        <p>We are dedicated to constant improvement, pushing the boundaries of health tech with
+                            responsible AI</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section><!-- End Values Section -->
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="count-box">
+                        <i class="mdi mdi-emoticon-outline"></i>
+                        <div>
+                            <span data-purecounter-start="0" data-purecounter-end="5000" data-purecounter-duration="1"
+                                  class="purecounter"></span>
+                            <p>Happy Clients</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="count-box">
+                        <i class="mdi mdi-crown" style="color: #ee6c20;"></i>
+                        <div>
+                            <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1"
+                                  class="purecounter"></span>
+                            <p>Features</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="count-box">
+                        <i class="mdi mdi-face-agent" style="color: #15be56;"></i>
+                        <div>
+                            <span data-purecounter-start="0" data-purecounter-end="1500" data-purecounter-duration="1"
+                                  class="purecounter"></span>
+                            <p>Hours Of Support</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="count-box">
+                        <i class="mdi mdi-chart-box-outline" style="color: #bb0852;"></i>
+                        <div>
+                            <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
+                                  class="purecounter"></span>
+                            <p>Metric Visualizations</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Counts Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+
+        <div class="container" data-aos="fade-up">
+
+            <header class="section-header">
+                <h2>Features</h2>
+                <p>Track, Analyze, Optimize: A Look at our Features</p>
+            </header>
+
+            <div class="row">
+
+                <div class="col-lg-6">
+                    <img src="{% static 'assets/images/home_page/features.png' %}" class="img-fluid" alt="" width="512px">
+                </div>
+
+                <div class="col-lg-6 mt-5 mt-lg-0 d-flex">
+                    <div class="row align-self-center gy-4">
+
+                        <div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
+                            <div class="feature-box d-flex align-items-center">
+                                <i class="mdi mdi-check" style="padding-top: 16px; padding-bottom: 16px"></i>
+                                <h3>AI Powered Health Assistant</h3>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6" data-aos="zoom-out" data-aos-delay="300">
+                            <div class="feature-box d-flex align-items-center">
+                                <i class="mdi mdi-check" style="padding-top: 16px; padding-bottom: 16px"></i>
+                                <h3>Medical Prescription Tracker</h3>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6" data-aos="zoom-out" data-aos-delay="400">
+                            <div class="feature-box d-flex align-items-center">
+                                <i class="mdi mdi-check" style="padding-top: 16px; padding-bottom: 16px"></i>
+                                <h3>Yoga Trainer</h3>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6" data-aos="zoom-out" data-aos-delay="500">
+                            <div class="feature-box d-flex align-items-center">
+                                <i class="mdi mdi-check" style="padding-top: 16px; padding-bottom: 16px"></i>
+                                <h3>Sleep Tracker</h3>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6" data-aos="zoom-out" data-aos-delay="600">
+                            <div class="feature-box d-flex align-items-center">
+                                <i class="mdi mdi-check" style="padding-top: 16px; padding-bottom: 16px"></i>
+                                <h3>Physcial Activity Tracker</h3>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6" data-aos="zoom-out" data-aos-delay="700">
+                            <div class="feature-box d-flex align-items-center">
+                                <i class="mdi mdi-check" style="padding-top: 16px; padding-bottom: 16px"></i>
+                                <h3>Nutrition Tracker</h3>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div> <!-- / row -->
+
+            <!-- Feature Tabs -->
+            <div class="row feture-tabs" data-aos="fade-up">
+                <div class="col-lg-6">
+                    <h3>A deeper dive into our features</h3>
+
+                    <!-- Tabs -->
+                    <ul class="nav nav-pills mb-3">
+                        <li>
+                            <a class="nav-link active" data-bs-toggle="pill" href="#tab1">Healio - Chatbot</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" data-bs-toggle="pill" href="#tab2">Yoga Trainer</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" data-bs-toggle="pill" href="#tab3">Nutrition Tracker</a>
+                        </li>
+                    </ul><!-- End Tabs -->
+
+                    <!-- Tab Content -->
+                    <div class="tab-content">
+
+                        <div class="tab-pane fade show active" id="tab1">
+                            <p>Never feel lost in the world of health information again. Health.ai's friendly AI medical
+                                chatbot is available 24/7 to answer your questions in a clear, informative way. Whether
+                                you have a simple inquiry about a symptom or need help understanding a medical term, our
+                                chatbot is here to guide you. It can't diagnose conditions or replace professional
+                                medical advice, but it can provide a wealth of knowledge and point you in the right
+                                direction for further care if needed. Think of it as your own personal health
+                                information concierge, always ready to assist you on your wellness journey.
+                            </p>
+                        </div><!-- End Tab 1 Content -->
+
+                        <div class="tab-pane fade show" id="tab2">
+                            <p>Want to deepen your yoga practice and perfect your poses? Health.ai's yoga posture
+                                tracker goes beyond just counting reps. Using sophisticated image recognition
+                                technology, it analyzes your form in real-time, providing personalized feedback on
+                                alignment and depth. Whether you're a seasoned yogi or just starting out, the tracker
+                                helps you avoid common mistakes and ensures you're getting the most out of each pose.
+                                Track your progress over time, identify areas for improvement, and achieve the perfect
+                                balance between strength and flexibility with Health.ai's yoga posture tracker – your
+                                virtual guide to a more fulfilling yoga practice.
+                            </p>
+                        </div><!-- End Tab 2 Content -->
+
+                        <div class="tab-pane fade show" id="tab3">
+                            <p>Fuel your body and optimize your health with health.ai's intelligent nutrition tracker.
+                                This powerful tool goes beyond simple calorie counting. It allows you to effortlessly
+                                log meals, scan barcodes, and access a comprehensive database of nutritional
+                                information. Uncover hidden patterns in your diet by tracking macronutrients, vitamins,
+                                and minerals. Health.ai even provides personalized recommendations based on your goals,
+                                whether you're aiming for weight loss, building muscle, or managing specific dietary
+                                needs. Take control of your nutrition and unlock a healthier, more vibrant you with
+                                Health.ai's intelligent nutrition tracker.</p>
+                        </div><!-- End Tab 3 Content -->
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6">
+                    <img src="{% static 'assets/images/home_page/features-2.png' %}" class="img-fluid" alt="">
+                </div>
+
+            </div><!-- End Feature Tabs -->
+
+        </div>
+
+    </section><!-- End Features Section -->
+
+    <!-- ======= F.A.Q Section ======= -->
+    <section id="faq" class="faq">
+
+        <div class="container" data-aos="fade-up">
+
+            <header class="section-header">
+                <h2>F.A.Q</h2>
+                <p>Frequently Asked Questions</p>
+            </header>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <!-- F.A.Q List 1-->
+                    <div class="accordion accordion-flush" id="faqlist1">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq-content-1">
+                                    Is my data secure with health.ai?
+                                </button>
+                            </h2>
+                            <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                                <div class="accordion-body">
+                                    Absolutely! We prioritize user privacy and data security. Your health information is
+                                    encrypted and stored securely on our servers. You can control who has access to your
+                                    data and easily export it at any time.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq-content-2">
+                                    Can health.ai diagnose medical conditions?
+                                </button>
+                            </h2>
+                            <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                                <div class="accordion-body">
+                                    No, health.ai is not a replacement for professional medical advice. While our AI
+                                    assistant can provide information and answer questions, it cannot diagnose
+                                    illnesses. We recommend consulting a healthcare provider for any medical concerns.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq-content-3">
+                                    What if the AI chatbot doesn't understand my question?
+                                </button>
+                            </h2>
+                            <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                                <div class="accordion-body">
+                                    Our AI chatbot is constantly learning and improving. If it can't answer your
+                                    question directly, it will offer relevant resources or suggest connecting with a
+                                    healthcare professional.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+
+                    <!-- F.A.Q List 2-->
+                    <div class="accordion accordion-flush" id="faqlist2">
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq2-content-1">
+                                    Does Health.ai work with my existing fitness tracker or devices?
+                                </button>
+                            </h2>
+                            <div id="faq2-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                                <div class="accordion-body">
+                                    Health.ai integrates with many popular fitness trackers and devices. You can easily
+                                    connect your devices to import data and gain a holistic view of your health.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq2-content-2">
+                                    Can I set goals and track my progress with Health.ai?
+                                </button>
+                            </h2>
+                            <div id="faq2-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                                <div class="accordion-body">
+                                    Yes! Health.ai allows you to set personalized health goals, like increasing sleep
+                                    quality or improving daily activity levels. The platform tracks your progress over
+                                    time and provides motivational insights to help you stay on track.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq2-content-3">
+                                    Is Health.ai appropriate for children?
+                                </button>
+                            </h2>
+                            <div id="faq2-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                                <div class="accordion-body">
+                                    While Health.ai offers valuable information, it's intended for adults. Parental
+                                    guidance is recommended if a child uses the platform.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section><!-- End F.A.Q Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+
+        <div class="container" data-aos="fade-up">
+
+            <header class="section-header">
+                <h2>Testimonials</h2>
+                <p>What they are saying about us</p>
+            </header>
+
+            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="200">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <div class="stars">
+                                <i class="mdi mdi-star"></i><i class="mdi mdi-star"></i><i
+                                    class="mdi mdi-star"></i><i class="mdi mdi-star"></i><i
+                                    class="mdi mdi-star"></i>
+                            </div>
+                            <p>
+                                health.ai's yoga posture tracker has been a game-changer for my practice. I can finally
+                                see exactly where I need to improve my form, and the personalized feedback helps me
+                                avoid injuries. I've noticed a significant difference in my flexibility and balance
+                                already!
+                            </p>
+                            <div class="profile mt-auto">
+                                <h3>Sarah Jones</h3>
+                                <h4>Fitness Enthusiast</h4>
+                            </div>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <div class="stars">
+                                <i class="mdi mdi-star"></i><i class="mdi mdi-star"></i><i
+                                    class="mdi mdi-star"></i><i class="mdi mdi-star"></i>
+                            </div>
+                            <p>
+                                health.ai's AI assistant is my go-to resource for quick health questions. It's like
+                                having a personal health concierge at my fingertips. I don't have time to wade through
+                                endless web searches, and the information is always clear and concise.
+                            </p>
+                            <div class="profile mt-auto">
+                                <h3>David Miller</h3>
+                                <h4>Busy Professional</h4>
+                            </div>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <div class="stars">
+                                <i class="mdi mdi-star"></i><i class="mdi mdi-star"></i><i
+                                    class="mdi mdi-star"></i><i class="mdi mdi-star"></i><i
+                                    class="mdi mdi-star"></i>
+                            </div>
+                            <p>
+                                I recommend health.ai to my patients who want to take a more proactive approach to their
+                                health. The platform empowers them with valuable data and insights, allowing them to
+                                participate more actively in their own healthcare journey. It's a fantastic tool for
+                                promoting wellness and preventive care.
+                            </p>
+                            <div class="profile mt-auto">
+                                <h3>Dr. Jane Williams</h3>
+                                <h4>Physician</h4>
+                            </div>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <div class="stars">
+                                <i class="mdi mdi-star"></i><i class="mdi mdi-star"></i><i
+                                    class="mdi mdi-star"></i><i class="mdi mdi-star"></i>
+                            </div>
+                            <p>
+                                health.ai has given me peace of mind about managing my medications. The prescription
+                                management tool keeps everything organized, and I never have to worry about missing a
+                                dose again. The sleep tracker also helps me understand my sleep patterns better, which
+                                has been a big help for my overall energy levels.
+                            </p>
+                            <div class="profile mt-auto">
+                                <h3>Michael Lee</h3>
+                                <h4>Senior Citizen</h4>
+                            </div>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <div class="stars">
+                                <i class="mdi mdi-star"></i><i class="mdi mdi-star"></i><i
+                                    class="mdi mdi-star"></i><i class="mdi mdi-star"></i>
+                            </div>
+                            <p>
+                                health.ai's nutrition tracker has been a lifesaver since I had my baby. It helps me
+                                track my calories and nutrients to ensure I'm getting everything I need while
+                                breastfeeding. The personalized recommendations have also been super helpful in managing
+                                my post-partum weight loss goals.
+                            </p>
+                            <div class="profile mt-auto">
+                                <h3>Maria Garcia</h3>
+                                <h4>New Mom</h4>
+                            </div>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+
+    </section><!-- End Testimonials Section -->
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+
+        <div class="container" data-aos="fade-up">
+
+            <header class="section-header">
+                <h2>Team</h2>
+                <p>Driven by the passion for a healthier you</p>
+            </header>
+
+            <div class="row gy-4 justify-content-center">
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                    <div class="member">
+                        <div class="member-img">
+                            <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                        </div>
+                        <div class="member-info">
+                            <h4>Anoushka Nag</h4>
+                            <p>We founded Health.ai with the vision of empowering everyone to take charge of their
+                                well-being through personalized data and intelligent guidance.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                    <div class="member">
+                        <div class="member-img">
+                            <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+                        </div>
+                        <div class="member-info">
+                            <h4>Ronan Lobo</h4>
+                            <p>Health.ai is more than just a platform; it's a future where technology bridges the gap
+                                between information and action, leading to a healthier and happier world.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section><!-- End Team Section -->
+
+    <!-- ======= Recent Blog Posts Section ======= -->
+    <section id="recent-blog-posts" class="recent-blog-posts">
+
+        <div class="container" data-aos="fade-up">
+
+            <header class="section-header">
+                <h2>Blog</h2>
+                <p>Recent posts form our Blog</p>
+            </header>
+
+            <div class="row">
+
+                <div class="col-lg-4">
+                    <div class="post-box">
+                        <div class="post-img"><img src="assets/img/blog/blog-1.jpg" class="img-fluid" alt=""></div>
+                        <span class="post-date">Mon, April 23</span>
+                        <h3 class="post-title">Unlocking Your Sleep Potential: How Health.ai's Tracker Can Help You Rest
+                            Better</h3>
+                        <a href="#" class="readmore stretched-link mt-auto"><span>Read More</span>
+                            <i class="mdi mdi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="post-box">
+                        <div class="post-img"><img src="assets/img/blog/blog-2.jpg" class="img-fluid" alt=""></div>
+                        <span class="post-date">Fri, April 13</span>
+                        <h3 class="post-title">Fueling Your Fitness Goals: A Guide to Using Health.ai's Nutrition
+                            Tracker</h3>
+                        <a href="#" class="readmore stretched-link mt-auto"><span>Read More</span>
+                            <i class="mdi mdi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="post-box">
+                        <div class="post-img"><img src="assets/img/blog/blog-3.jpg" class="img-fluid" alt=""></div>
+                        <span class="post-date">Thur, March 28</span>
+                        <h3 class="post-title">Your Health Questions Answered: A Look at Health.ai's AI Medical
+                            Chatbot</h3>
+                        <a href="#" class="readmore stretched-link mt-auto"><span>Read More</span>
+                            <i class="mdi mdi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section><!-- End Recent Blog Posts Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+
+        <div class="container" data-aos="fade-up">
+
+            <header class="section-header">
+                <h2>Contact</h2>
+                <p>Contact Us</p>
+            </header>
+
+            <div class="row gy-4">
+
+                <div class="col-lg-6">
+
+                    <div class="row gy-4">
+                        <div class="col-md-6">
+                            <div class="info-box">
+                                <i class="mdi mdi-map-marker-radius-outline"></i>
+                                <h3>Address</h3>
+                                <p>Manipal Institute of Technology,<br>Manipal, Karnataka 576104</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-box">
+                                <i class="mdi mdi-phone-outline"></i>
+                                <h3>Call Us</h3>
+                                <p>+91 9876543210<br>+91 1234567890</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-box">
+                                <i class="mdi mdi-email-multiple-outline"></i>
+                                <h3>Email Us</h3>
+                                <p><a href="mailto:info@health.ai">info@health.ai</a><br>
+                                    <a href="mailto:contact@health.ai">contact@health.ai</a></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-box">
+                                <i class="mdi mdi-clock-time-four-outline"></i>
+                                <h3>Open Hours</h3>
+                                <p>Monday - Friday<br>9:00AM - 05:00PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6">
+                    <form class="php-email-form">
+                        <div class="row gy-4">
+
+                            <div class="col-md-6">
+                                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                            </div>
+
+                            <div class="col-md-6 ">
+                                <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                            </div>
+
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                            </div>
+
+                            <div class="col-md-12">
+                                <textarea class="form-control" name="message" rows="6" placeholder="Message"
+                                          required></textarea>
+                            </div>
+
+                            <div class="col-md-12 text-center">
+                                <div class="loading">Loading</div>
+                                <div class="error-message"></div>
+                                <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                                <button type="submit">Send Message</button>
+                            </div>
+
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section><!-- End Contact Section -->
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
+
+    <div class="footer-newsletter">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12 text-center">
+                    <h4>Our Newsletter</h4>
+                    <p>Join for latest feature updates</p>
+                </div>
+                <div class="col-lg-6">
+                    <form>
+                        <input type="email" name="email"><input type="submit" value="Subscribe">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-top">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-5 col-md-12 footer-info">
+                    <a href="/" class="logo d-flex align-items-center">
+                        <span>health.ai</span>
+                    </a>
+                    <br>
+                    <div class="social-links mt-3">
+                        <a href="#" class="twitter"><i class="mdi mdi-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="mdi mdi-facebook"></i></a>
+                        <a href="#" class="instagram"><i class="mdi mdi-instagram"></i></a>
+                        <a href="#" class="linkedin"><i class="mdi mdi-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-6 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><i class="mdi mdi-arrow-right"></i> <a href="#">Home</a></li>
+                        <li><i class="mdi mdi-arrow-right"></i> <a href="#">About us</a></li>
+                        <li><i class="mdi mdi-arrow-right"></i> <a href="#">Services</a></li>
+                        <li><i class="mdi mdi-arrow-right"></i> <a href="#">Terms of service</a></li>
+                        <li><i class="mdi mdi-arrow-right"></i> <a href="#">Privacy policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                    <h4>Contact Us</h4>
+                    <p>
+                        Manipal Institute of Technology <br>
+                        Manipal, Karnataka 576104<br>
+                        India <br><br>
+                        <strong>Phone:</strong> +91 9876543210<br>
+                        <strong>Email:</strong> info@health.ai<br>
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="copyright">
+            &copy; Copyright <strong><span>health.ai</span></strong>. All Rights Reserved
+        </div>
+    </div>
+</footer><!-- End Footer -->
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="mdi mdi-arrow-up"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="{% static 'assets/js/purecounter_vanilla.js' %}"></script>
+<script src="{% static 'assets/js/aos.js' %}"></script>
+<script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/js/glightbox.min.js' %}"></script>
+<script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'assets/js/validate.js' %}"></script>
+
+<!-- Template Main JS File -->
+<script src="{% static 'assets/js/home_main.js' %}"></script>
+
+</body>
+
+</html>
